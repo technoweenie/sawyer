@@ -37,8 +37,8 @@ create_user_rel = agent.relation("users/create")
 
 puts create_user_rel.inspect
 
-created = create_user_rel.request(:login => 'booya')
-puts created.inspect
+res = create_user_rel.request(:login => 'booya')
+puts res.resource.inspect
 puts
 
 puts "ADD A FAVORITE"

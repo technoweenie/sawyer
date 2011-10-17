@@ -87,7 +87,7 @@ module Sawyer
       rel   = self.relation(relation)
       body  = dump(body)
       res   = @faraday.send(rel.method, rel.href, body, *args, &block)
-      rel.build load(res)
+      Sawyer::Response.new rel, res, load(res)
     end
 
     # Public: Determines if this Agent has hit the root endpoint yet.
